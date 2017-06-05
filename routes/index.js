@@ -18,4 +18,6 @@ router.get('/teacher-login', function(req, res, next) {
 router.get('/student-login', function(req, res, next) {
   res.render('student-login', { title: 'Auth Page' });
 });
+
+
 module.exports = router;
