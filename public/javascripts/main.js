@@ -18,6 +18,18 @@ $(document).ready(function() {
 
   })
 
+  setTimeout(slide_front_text, 2500);
 
+  function slide_front_text() {
+  $('#slider_text').slideUp(800, function() {
+      $(this).text('Paired Programming for Now').slideDown(500).delay(2200);
+      $(this).slideUp(1200, function() {
+        $(this).text("Paired Programming for Tomorrow").slideDown(500).delay(2200);
+        $(this).slideUp(1200, function() {
+          $(this).text("Code_Pilot").slideDown(500).delay(5500);
+        });
+      });
+  });
+};
 
 })
