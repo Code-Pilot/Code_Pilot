@@ -12,10 +12,7 @@ router.post('/', function(req,res,next){
     pword: student.pword,
     fname: student.fname,
     lname: student.lname,
-    email: student.email,
-    bio:'',
-    priorKnowledge: '',
-    toKnow: ''
+    email: student.email
   })
   .then(()=>{
     res.redirect('/profile/student/' + student.uname)
@@ -29,9 +26,7 @@ router.post('/teacher', function(req, res, next){
     pword: teacher.pword,
     fname: teacher.fname,
     lname: teacher.lname,
-    email: teacher.email,
-    bio:'',
-    skills: ''
+    email: teacher.email
   })
   .then(()=>{
     res.redirect('/profile/teacher/' + teacher.uname)
