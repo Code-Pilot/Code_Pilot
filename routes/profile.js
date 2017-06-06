@@ -67,6 +67,36 @@ router.get('/student/:uname/delete/', function(req,res,next) {
   })
 })
 
+router.post('/teacher/edited/', function(req, res, next){
+  var teacher = req.body;
+  knex('teachers').where('id', teacher.id).update({
+        'uname': teacher.uname,
+        'pword': teacher.pword,
+        'fname': teacher.fname,
+        'lname': teacher.lname,
+        'email': teacher.email,
+        'bio': teacher.bio,
+        'skills': teacher.skills
+  })
+  .then((data)=>{
+    console.log('new teach');
+    res.redirect('/profile/teacher/' + teacher.uname)
+  })
+})
+
+router.get('/teacher/:uname/edit', function(req, res, next) {
+    var teacher = req.params.uname
+  knex('teachers').select().where('uname', teacher).then((data) => {
+    res.render('teacher-profile-edit', {teacher: data[0]})
+  })
+})
+
+router.get('/teacher/:uname/delete/', function(req,res,next) {
+  linkQuery.deleteTeacher(req.params.uname).then(() => {
+    res.redirect('/')
+  })
+})
+
 // pg('ideas').where('id', id).update({
 //     'title': body.title,
 //     'description': body.description,

@@ -1,11 +1,16 @@
 var knex = require('./knex')
 
-function deleteStudent(pooppoop) {
+function deleteStudent(uname) {
   return knex('students').where(
-  'uname', pooppoop).del()
+  'uname', uname).del()
 }
 
+function deleteTeacher(uname) {
+  return knex('teachers').where(
+  'uname', uname).del()
+}
 
 module.exports = {
-  deleteStudent
+  deleteStudent,
+  deleteTeacher
 }
