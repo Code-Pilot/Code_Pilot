@@ -1,5 +1,4 @@
 body {
-  padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   margin: auto;
 }
@@ -8,13 +7,6 @@ a {
   color: #00B7FF;
 }
 
-.flex {
-  display: flex;
-  justify-content: center;
-  margin: auto;
-  flex-wrap: wrap;
-  width: 100%;
-}
 
 .hide {
   display: none;
