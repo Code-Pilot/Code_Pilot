@@ -7,7 +7,11 @@ module.exports = {
   connection: 'postgres://localhost/code_pilot',
   },
   production: {
-    client: 'postgresql',
-    connection: process.env.DATABASE_URL + '?ssl=true'
+      client: 'postgresql',
+      connection: {
+        database: 'my_db',
+        user:     'username',
+        password: 'password'
+      }
+    }
   }
-}
