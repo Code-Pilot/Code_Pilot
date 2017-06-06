@@ -1,8 +1,8 @@
 var knex = require('./knex')
 
-function deleteStudent(id) {
+function deleteStudent(pooppoop) {
   return knex('students').where(
-  'id', id).del()
+  'uname', pooppoop).del()
 }
 
 

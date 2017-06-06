@@ -61,8 +61,8 @@ router.post('/student/edited/', function(req, res, next){
   })
 })
 
-router.get('/student/delete/', function(req,res,next) {
-  linkQuery.deleteStudent(req.params.id).then(() => {
+router.get('/student/:uname/delete/', function(req,res,next) {
+  linkQuery.deleteStudent(req.params.uname).then(() => {
     res.redirect('/')
   })
 })
