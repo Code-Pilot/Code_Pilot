@@ -121,3 +121,9 @@ io.sockets.on('connection', function(socket) {
     io.sockets.emit('get users', users);
   }
 })
+
+io.sockets.on('connection', function (socket) {
+  socket.on('join', function (data) {
+    socket.join(data.email); // We are using room of socket io
+  });
+});

@@ -8,8 +8,13 @@ exports.up = function(knex, Promise) {
     table.string('lname').notNullable()
     table.string('email').notNullable()
     table.text('bio')
-    table.text('priorKnowledge')
-    table.text('toKnow')
+    table.string('userType').defaultTo('student')
+    table.string('stack')
+    table.string('lang1')
+    table.string('lang2')
+    table.string('langToKnow1')
+    table.string('langToKnow2')
+    table.boolean('isOnline').defaultTo(false)
   })
 
 

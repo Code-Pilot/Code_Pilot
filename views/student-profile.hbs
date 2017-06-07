@@ -9,7 +9,9 @@
 <p>{{student.priorKnowledge}}</p>
 <p>{{student.toKnow}}</p>
 
-<a href="/profile/student/{{student.uname}}/edit">Edit My Profile</a>
+
+<a href="/profile/student/{{student.uname}}/edit">Edit Profile</a>
+
 
 <hr>
 
@@ -18,10 +20,10 @@
         <div class="col-md-12">
           <form class="" id="userForm">
             <div class="form-group">
-              <label for="">Enter Username</label>
-              <textarea class="form-control" id="username"></textarea>
+              <label style="display:none" for="">Enter Username</label>
+              <input class="form-control" id="username" style="display:none" value="{{student.uname}} - {{student.userType}}">
               <br />
-              <input type="submit" class="btn btn-primary" value="Login">
+              <input type="submit" class="btn btn-primary" value="Enter Chat">
             </div>
           </form>
 
