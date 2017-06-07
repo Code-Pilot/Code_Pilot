@@ -45,5 +45,9 @@ router.get('/student-login', function(req, res, next) {
   res.render('student-login', { title: 'Auth Page' });
 });
 
+router.get('/try/again/please/', (req,res) => {
+  res.render('oops')
+})
+
 
 module.exports = router;

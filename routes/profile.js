@@ -97,24 +97,5 @@ router.get('/teacher/:uname/delete/', function(req,res,next) {
   })
 })
 
-// pg('ideas').where('id', id).update({
-//     'title': body.title,
-//     'description': body.description,
-//     'excitement': body.excitement,
-//     'difficulty': body.difficulty,
-//     'notes': body.notes,
-//     'defFeatures': body.defFeatures,
-//     'posFeatures': body.posFeatures,
-//     'market': body.market,
-//     'valueAdd': body.valueAdd,
-//     'competition': body.competition,
-//     'compImprove': body.compImprove,
-//     'techUsed': body.techUsed,
-//     'challenges': body.challenges,
-//     'resources': body.resources,
-//     'purpose': body.purpose,
-//     'research': body.research,
-//     'links': body.links,
-//     'stage': body.stage,
 
 module.exports = router;

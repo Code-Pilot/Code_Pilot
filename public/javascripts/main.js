@@ -37,6 +37,16 @@ $(document).ready(function() {
     })
   });
 
+
+  $.ajax({
+    url:'route/action/',
+    type:'POST',
+    data:'your form data',
+    success: function(response){
+      alert('You already have an account!')
+    }
+  })
+
   $('.signup-modal-button').click(function() {
     console.log('poop');
     $('.signup-modal-div').toggleClass('hide')
