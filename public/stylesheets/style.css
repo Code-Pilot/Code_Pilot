@@ -11,6 +11,17 @@ a {
   display: none;
 }
 
+.slider-container {
+  max-height: 100px;
+  min-height: 100px;
+}
+
+.sliderText_content {
+  max-height: 50px;
+  min-height: 50px;
+  margin: 0;
+}
+
 .login-signup {
   padding: 0;
 }

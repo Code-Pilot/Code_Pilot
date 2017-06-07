@@ -47,13 +47,17 @@ router.post('/student/edited/', function(req, res, next){
   var student = req.body;
   knex('students').where('id', student.id).update({
         'uname': student.uname,
-        'pword': student.pword,
+        // 'pword': student.pword,
         'fname': student.fname,
         'lname': student.lname,
         'email': student.email,
         'bio': student.bio,
-        'priorKnowledge': student.priorKnowledge,
-        'toKnow': student.toKnow
+        'userType': student.userType,
+        'stack': student.stack,
+        'lang1': student.lang1,
+        'lang2': student.lang2,
+        'langToKnow1': student.langToKnow1,
+        'langToKnow2': student.langToKnow2
   })
   .then((data)=>{
     console.log('stuffffff');
