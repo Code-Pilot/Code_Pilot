@@ -7,11 +7,41 @@ a {
   color: #00B7FF;
 }
 
-
 .hide {
   display: none;
 }
 
-.front-page-clipart {
-  
+.login-signup {
+  padding: 0;
+}
+
+.col-sm-12 {
+  padding: 0;
+}
+
+.clipart-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.page-title {
+  display: flex;
+  justify-content: center;
+}
+
+.student-login {
+  display: flex;
+  justify-content: center;
+}
+
+.my-submit-button {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 1%;
+}
+
+.remaining-links {
+  display: flex;
+  justify-content: center;
 }
