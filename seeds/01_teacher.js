@@ -9,8 +9,12 @@ exports.seed = function(knex, Promise) {
         fname: 'Coulter',
         lname: 'Freyre',
         email: 'ish@gmail.com',
+        userType: 'teacher',
         bio: 'I am a major bitchFace',
-        skills: 'I have limited skills'
+        skills: 'I have limited skills',
+        lang1: 'Javascript',
+        lang2: 'Angular',
+        lang3: 'React'
       }]
       return knex('teachers').insert(teachers)
     });

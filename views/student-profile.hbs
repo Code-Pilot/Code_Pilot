@@ -21,7 +21,7 @@
           <form class="" id="userForm">
             <div class="form-group">
               <label style="display:none" for="">Enter Username</label>
-              <input class="form-control" id="username" style="display:none" value="{{student.uname}} - {{student.userType}}">
+              <input class="form-control" id="username" style="display:none" value="<em>{{student.userType}}</em> - <strong>{{student.uname}}</strong><br><span style='background-color:yellow'> {{teacher.lang1}}</span> <span style='background-color:dodgerblue; color:white;' > {{teacher.lang2}}</span>">
               <br />
               <input type="submit" class="btn btn-primary" value="Enter Chat">
             </div>

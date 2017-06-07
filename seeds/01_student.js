@@ -10,8 +10,13 @@ exports.seed = function(knex, Promise) {
         lname: 'Pride',
         email: 'bish@gmail.com',
         bio: 'I am a major wasabiPea',
-        priorKnowledge: 'I have lots of wasabi Peas',
-        toKnow: 'Everything! I so stupid.... :('
+        userType: 'student',
+        stack: 'Front End',
+        lang1: 'Javascript',
+        lang2: 'HTML',
+        langToKnow1: 'C++',
+        langToKnow2: 'React Native',
+        isOnline: false
       }]
       return knex('students').insert(students)
     });
