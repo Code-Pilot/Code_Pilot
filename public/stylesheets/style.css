@@ -45,3 +45,15 @@ a {
   display: flex;
   justify-content: center;
 }
+
+.edit-form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.edit-form {
+  display: flex;
+  flex-direction: column;
+  width: 44em;
+}
