@@ -1,25 +1,62 @@
+<h1 class="page-title">Edit Profile</h1>
 
-<form class="" action="/profile/student/edited" method="post">
-  <h2>Welcome,<input type="text" name="uname" value="{{student.uname}}">!</h2>
-  <input hidden type="text" name="id" value="{{student.id}}">
-  <p>Bio:<input type="text" name="bio" value="{{student.bio}}"></p>
-  <p><label for="">Email</label><input type="text" name="email" value="{{student.email}}"></p>
-  <p><label for="">Password</label><input type="text" name="pword" value="{{student.pword}}"></p>
-  <p><label for="">First Name</label><input type="text" name="fname" value="{{student.fname}}"></p>
-  <p><label for="">Last Name</label><input type="text" name="lname" value="{{student.lname}}"></p>
-  <h1>Do You Even Code, Bro?</h1>
+<div class="edit-form-container">
+  <form class="edit-form" action="/profile/student/edited" method="post">
+    <input hidden type="text" name="id" value="{{student.id}}">
 
-  <!-- TEST THE STUDENTS -->
-  <!-- <h3><label for="">Which resources have you been using to learn code?</label></h3> -->
-  <h3><label for="">List Your current Code-understanding here:</label><input type="text" name="" value="{{student.priorKnowledge}}"></h3>
-  <h3><label for="">What are you hoping to learn with <em>Code Pilot</em></label><input type="text" name="" value="{{student.toKnow}}"></h3>
+    <div class="">
+      <label>Username:</label>
+      <input type="text" name="uname" value="{{student.uname}}">
+    </div>
+    <br>
+    <div class="">
+      <label>Bio:</label>
+      <input type="text" name="bio" value="{{student.bio}}">
+    </div>
+    <br>
+    <div class="">
+      <label for="">Email:</label>
+      <input type="text" name="email" value="{{student.email}}">
+    </div>
+    <!-- <br>
+    <div class="">
+      <label for="">Password:</label>
+      <input type="text" name="pword" value="{{student.pword}}">
+    </div> -->
+    <br>
+    <div class="">
+      <label for="">First Name:</label>
+      <input type="text" name="fname" value="{{student.fname}}">
+    </div>
+    <br>
+    <div class="">
+      <label for="">Last Name:</label>
+      <input type="text" name="lname" value="{{student.lname}}">
+    </div>
+    <br>
+    <div class="">
+      <label for="">Preferred Stack:</label>
+      <input type="text" name="stack" value="{{student.stack}}">
+    </div>
+    <br>
+    <div class="">
+      <label for="">I have prior knowledge in:</label>
+      <input type="text" name="lang1" value="{{student.lang1}}">
+      <input type="text" name="lang2" value="{{student.lang2}}">
+    </div>
+    <br>
+    <div class="">
+      <label for="">Languages I would like to know:</label>
+      <input type="text" name="langToKnow1" value="{{student.langToKnow1}}">
+      <input type="text" name="langToKnow2" value="{{student.langToKnow2}}">
+    </div>
+    <br>
+    <button type="submit" class="btn btn-primary" name="button">Submit</button>
 
-  <button type="submit" class="btn btn-primary" name="button">Submit</button>
+  </form>
+    <br>
+    <a href="/profile/student/{{student.uname}}/delete/"><div class="btn btn-danger" type="button" name="button">Delete Profile</div></a>
 
+  <hr>
 
-
-</form>
-
-  <a href="/profile/student/{{student.uname}}/delete/"><div class="btn btn-danger" type="button" name="button">Delete Profile</div></a>
-
-<hr>
+</div>

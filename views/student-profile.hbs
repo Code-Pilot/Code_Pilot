@@ -4,11 +4,6 @@
 <p>{{student.bio}}</p>
 <p>{{student.email}}</p>
 
-<h2>Yeah, I code.... Bro</h2>
-
-<p>{{student.priorKnowledge}}</p>
-<p>{{student.toKnow}}</p>
-
 
 <a href="/profile/student/{{student.uname}}/edit">Edit Profile</a>
 
@@ -16,38 +11,37 @@
 <hr>
 
 <div class="container">
-      <div class="row" id="userFormArea">
-        <div class="col-md-12">
-          <form class="" id="userForm">
-            <div class="form-group">
-              <label style="display:none" for="">Enter Username</label>
-              <input class="form-control" id="username" style="display:none" value="<em>{{student.userType}}</em> - <strong>{{student.uname}}</strong><br><span style='background-color:yellow'> {{teacher.lang1}}</span> <span style='background-color:dodgerblue; color:white;' > {{teacher.lang2}}</span>">
-              <br />
-              <input type="submit" class="btn btn-primary" value="Enter Chat">
-            </div>
-          </form>
-
+  <div class="row" id="userFormArea">
+    <div class="col-md-12">
+      <form class="" id="userForm">
+        <div class="form-group">
+          <input class="form-control" id="username" style="display:none" value="<em>{{student.userType}}</em> - <strong>{{student.uname}}</strong><br><span style='background-color:yellow'> {{teacher.lang1}}</span> <span style='background-color:dodgerblue; color:white;' > {{teacher.lang2}}</span>">
+          <br />
+          <input type="submit" class="btn btn-primary" value="Enter Chat">
         </div>
-      </div>
+      </form>
+
+    </div>
+  </div>
 
 
-      <div id="messageArea" class="row">
-        <div class="col-md-4">
-          <div class="well">
-            <h3>Online Users</h3>
-            <ul class="list-group" id="users"></ul>
-          </div>
-        </div>
-        <div class="col-md-8">
-          <div class="chat" id="chat"></div>
-          <form class="" id="messageForm" action="index.html" method="post">
-            <div class="form-group">
-              <label for="">Enter Message</label>
-              <textarea class="form-control" id="message" name="name" rows="8" cols="80"></textarea>
-              <br />
-              <input type="submit" name="" class="btn btn-primary" value="Send Message">
-            </div>
-          </form>
-        </div>
+  <div id="messageArea" class="row">
+    <div class="col-md-4">
+      <div class="well">
+        <h3>Online Users</h3>
+        <ul class="list-group" id="users"></ul>
       </div>
     </div>
+    <div class="col-md-8">
+      <div class="chat" id="chat"></div>
+      <form class="" id="messageForm" action="index.html" method="post">
+        <div class="form-group">
+          <label for="">Enter Message</label>
+          <textarea class="form-control" id="message" name="name" rows="8" cols="80"></textarea>
+          <br />
+          <input type="submit" name="" class="btn btn-primary" value="Send Message">
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
