@@ -12,3 +12,40 @@
 <a href="/profile/student/{{student.uname}}/edit">Edit My Bitch</a>
 
 <hr>
+
+<div class="container">
+      <div class="row" id="userFormArea">
+        <div class="col-md-12">
+          <form class="" id="userForm">
+            <div class="form-group">
+              <label for="">Enter Username</label>
+              <textarea class="form-control" id="username"></textarea>
+              <br />
+              <input type="submit" class="btn btn-primary" value="Login">
+            </div>
+          </form>
+
+        </div>
+      </div>
+
+
+      <div id="messageArea" class="row">
+        <div class="col-md-4">
+          <div class="well">
+            <h3>Online Users</h3>
+            <ul class="list-group" id="users"></ul>
+          </div>
+        </div>
+        <div class="col-md-8">
+          <div class="chat" id="chat"></div>
+          <form class="" id="messageForm" action="index.html" method="post">
+            <div class="form-group">
+              <label for="">Enter Message</label>
+              <textarea class="form-control" id="message" name="name" rows="8" cols="80"></textarea>
+              <br />
+              <input type="submit" name="" class="btn btn-primary" value="Send Message">
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
