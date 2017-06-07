@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 var linkQuery = require('../db/linkQuery');
 var knex = require('../db/knex');
+var bcrypt = require('bcrypt')
 
 //router mounted at localhost:3000/profile
 
@@ -12,12 +13,57 @@ router.get('/student/:uname', (req, res) =>{
   })
 })
 
+
+
+
+// app.post('/profile', (req, res) => {
+//   linkQuery.seeIfUserExists().where({
+//     email: req.body.email
+//   }).first()
+//         .then(function (user) {
+//           if (user) {
+//             bcrypt.compare(req.body.password, user.password).then(function (data) {
+//               if (data) {
+//                 req.session.id = user.id
+//                 res.redirect('/profile/' + user.id)
+//               } else {
+//                 res.send('incorrect password')
+//               }
+//             })
+//           } else {
+//             res.send('invalid login')
+//           }
+//         })
+// })
+
 router.post('/', function(req, res, next) {
-  const student = req.body;
-  knex('students').select().where('uname', student.uname)
-  .then((data) => {
-      res.redirect('profile/student/'+ student.uname);
-    })
+  knex('students').select().where({
+    id: req.body.id
+  }).first().then(function(user){
+    if(user){
+      bcrypt.compare(req.body.pword, user.pword).then(function(data){
+        console.log('HELLOHELLO' , user.id);
+        if(data){
+          req.session.id = user.id
+          res.redirect('/profile/student/' + user.uname)
+        } else {
+          res.send('incorrect password')
+        }
+      })
+    } else {
+      res.send('invalid login')
+    }
+  })
+
+
+
+
+
+  // const student = req.body;
+  // knex('students').select().where('uname', student.uname)
+  // .then((data) => {
+  //     res.redirect('profile/student/'+ student.uname);
+  //   })
 });
 
 router.get('/student/:uname/edit', function(req, res, next) {

@@ -36,10 +36,6 @@ router.post('/', function(req,res,next){
   })
 })
 
-router.post('/router/action',(req,res,next)=>{
-  res.render("student-signup",{success:true})
-})
-
 
 
 
