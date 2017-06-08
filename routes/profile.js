@@ -3,7 +3,8 @@ var router = express.Router();
 var linkQuery = require('../db/linkQuery');
 var knex = require('../db/knex');
 var bcrypt = require('bcrypt')
-
+var cookieSession = require('cookie-session')
+var key = process.env.COOKIE_KEY || 'asdfasdf'
 //router mounted at localhost:3000/profile
 
 router.get('/student/:uname', (req, res) =>{
@@ -35,14 +36,21 @@ router.get('/student/:uname', (req, res) =>{
 //           }
 //         })
 // })
-
+//honey backpack
 router.post('/', function(req, res, next) {
   knex('students').select().where({
-    id: req.body.id
-  }).first().then(function(user){
+    uname: req.body.uname
+  }).first()
+  .then(function(user){
+    console.log(user);
     if(user){
-      bcrypt.compare(req.body.pword, user.pword).then(function(data){
-        console.log('HELLOHELLO' , user.id);
+      bcrypt.compare(
+        req.body.pword, user.pword
+      ).then(function(data){
+        console.log(user.pword);
+        console.log('HELLOHELLO' , user.uname);
+        console.log(data);
+        console.log('USERUSERUSER' , user.id);
         if(data){
           req.session.id = user.id
           res.redirect('/profile/student/' + user.uname)

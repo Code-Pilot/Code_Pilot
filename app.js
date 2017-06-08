@@ -9,6 +9,8 @@ var index = require('./routes/index');
 var users = require('./routes/users');
 var profile = require('./routes/profile');
 var signup = require('./routes/signup')
+var cookieSession = require('cookie-session')
+var key = process.env.COOKIE_KEY || 'asdfasdf'
 
 
 var app = express();
@@ -16,6 +18,13 @@ var app = express();
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
+
+app.use(cookieSession({
+  name: 'session',
+  keys: [key],
+  maxAge: 24 * 60 * 60 * 1000
+}))
+
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
