@@ -89,12 +89,61 @@ router.get('/teacher/:uname', (req, res) =>{
 })
 
 router.post('/teacher', function(req, res, next) {
-  console.log('mehhhh');
-  const teacher = req.body;
-  knex('teachers').select().where('uname', teacher.uname)
-  .then((data) => {
-      res.redirect('/profile/teacher/'+ teacher.uname);
-    })
+  knex('teachers').select().where({
+    uname: req.body.uname
+  }).first()
+  .then(function(user){
+    console.log(user);
+    if(user){
+      bcrypt.compare(
+        req.body.pword, user.pword
+      ).then(function(data){
+        console.log(user.pword);
+        console.log('HELLOHELLO' , user.uname);
+        console.log(data);
+        console.log('USERUSERUSER' , user.id);
+        if(data){
+          req.session.id = user.id
+          res.redirect('/profile/teacher/' + user.uname)
+        } else {
+          res.redirect('/no/can/do/')
+        }
+      })
+    } else {
+      res.redirect('/invalid/creds')
+    }
+  })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  // console.log('mehhhh');
+  // const teacher = req.body;
+  // knex('teachers').select().where('uname', teacher.uname)
+  // .then((data) => {
+  //     res.redirect('/profile/teacher/'+ teacher.uname);
+  //   })
 });
 
 router.post('/student/edited/', function(req, res, next){
