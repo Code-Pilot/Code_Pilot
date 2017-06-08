@@ -55,11 +55,11 @@ router.post('/', function(req, res, next) {
           req.session.id = user.id
           res.redirect('/profile/student/' + user.uname)
         } else {
-          res.send('incorrect password')
+          res.redirect('/no/can/do/')
         }
       })
     } else {
-      res.send('invalid login')
+      res.redirect('/invalid/creds')
     }
   })
 
