@@ -15,7 +15,11 @@ router.get('/student/:uname', (req, res) =>{
 })
 
 
-
+router.get('/student/pair-programming/', (req,res) => {
+  var onlineTeachers = knex('teachers').select().where('isOnline', true).then((data)=>{
+    res.render('online-teachers', onlineTeachers)
+  })
+})
 
 // app.post('/profile', (req, res) => {
 //   linkQuery.seeIfUserExists().where({
@@ -177,19 +181,6 @@ router.post('/offline/', (req,res) => {
       res.redirect('/profile/teacher/'+ teacher.uname)
   })
 })
-
-
-
-// router.post('/offline/', (req,res) => {
-//   teacher = req.body
-//   var isOnline = req.body.isOnline
-//   knex('teachers').where('isOnline', isOnline).update({
-//     'isOnline': false
-//   }).then(() => {
-//     console.log('meowth');
-//     res.redirect('/profile/teacher/'+ teacher.uname)
-//   })
-// })
 
 
 module.exports = router;
