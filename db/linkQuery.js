@@ -10,6 +10,7 @@ function deleteTeacher(uname) {
   'uname', uname).del()
 }
 
+
 module.exports = {
   deleteStudent,
   deleteTeacher

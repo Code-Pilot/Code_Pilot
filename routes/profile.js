@@ -2,7 +2,9 @@ var express = require('express');
 var router = express.Router();
 var linkQuery = require('../db/linkQuery');
 var knex = require('../db/knex');
-
+var bcrypt = require('bcrypt')
+var cookieSession = require('cookie-session')
+var key = process.env.COOKIE_KEY || 'asdfasdf'
 //router mounted at localhost:3000/profile
 
 router.get('/student/:uname', (req, res) =>{
@@ -12,12 +14,64 @@ router.get('/student/:uname', (req, res) =>{
   })
 })
 
+
+
+
+// app.post('/profile', (req, res) => {
+//   linkQuery.seeIfUserExists().where({
+//     email: req.body.email
+//   }).first()
+//         .then(function (user) {
+//           if (user) {
+//             bcrypt.compare(req.body.password, user.password).then(function (data) {
+//               if (data) {
+//                 req.session.id = user.id
+//                 res.redirect('/profile/' + user.id)
+//               } else {
+//                 res.send('incorrect password')
+//               }
+//             })
+//           } else {
+//             res.send('invalid login')
+//           }
+//         })
+// })
+//honey backpack
 router.post('/', function(req, res, next) {
-  const student = req.body;
-  knex('students').select().where('uname', student.uname)
-  .then((data) => {
-      res.redirect('profile/student/'+ student.uname);
-    })
+  knex('students').select().where({
+    uname: req.body.uname
+  }).first()
+  .then(function(user){
+    console.log(user);
+    if(user){
+      bcrypt.compare(
+        req.body.pword, user.pword
+      ).then(function(data){
+        console.log(user.pword);
+        console.log('HELLOHELLO' , user.uname);
+        console.log(data);
+        console.log('USERUSERUSER' , user.id);
+        if(data){
+          req.session.id = user.id
+          res.redirect('/profile/student/' + user.uname)
+        } else {
+          res.send('incorrect password')
+        }
+      })
+    } else {
+      res.send('invalid login')
+    }
+  })
+
+
+
+
+
+  // const student = req.body;
+  // knex('students').select().where('uname', student.uname)
+  // .then((data) => {
+  //     res.redirect('profile/student/'+ student.uname);
+  //   })
 });
 
 router.get('/student/:uname/edit', function(req, res, next) {
@@ -101,24 +155,5 @@ router.get('/teacher/:uname/delete/', function(req,res,next) {
   })
 })
 
-// pg('ideas').where('id', id).update({
-//     'title': body.title,
-//     'description': body.description,
-//     'excitement': body.excitement,
-//     'difficulty': body.difficulty,
-//     'notes': body.notes,
-//     'defFeatures': body.defFeatures,
-//     'posFeatures': body.posFeatures,
-//     'market': body.market,
-//     'valueAdd': body.valueAdd,
-//     'competition': body.competition,
-//     'compImprove': body.compImprove,
-//     'techUsed': body.techUsed,
-//     'challenges': body.challenges,
-//     'resources': body.resources,
-//     'purpose': body.purpose,
-//     'research': body.research,
-//     'links': body.links,
-//     'stage': body.stage,
 
 module.exports = router;
