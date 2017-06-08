@@ -9,6 +9,23 @@
 
 <a href="/profile/teacher/{{teacher.uname}}/edit">Edit My Profile</a>
 
+<h3>Would you like to be available for pair-programming?</h3>
+<form class="" action="/profile/online/" method="post">
+  <input hidden type="text" name="isOnline" value="{{teacher.isOnline}}">
+  <input hidden type="text" name="uname" value="{{teacher.uname}}">
+  <button type="submit" class="btn-primary">Go Online</button>
+</form>
+
+<form class="" action="/profile/offline/" method="post">
+  <input hidden type="text" name="isOnline" value="{{teacher.isOnline}}">
+  <input hidden type="text" name="uname" value="{{teacher.uname}}">
+  <button type="submit" class="btn-danger">Go Offline</button>
+</form>
+
+
+
+
+
 <hr>
 
 
@@ -17,6 +34,7 @@
     <div class="col-md-12">
       <form class="" id="userForm">
         <div class="form-group">
+          <input style="display:none"type="text" name="userType" value="teacher">
           <input class="form-control" id="username" style="display:none" value="<em>{{teacher.userType}}</em> - <strong>{{teacher.uname}}</strong> {<span style='background-color:yellow'>{{teacher.lang1}}</span> <span style='background-color:dodgerblue; color:white;'> {{teacher.lang2}}</span>}">
           <br />
           <input type="submit" class="enterChat btn btn-primary" value="Enter Chat">

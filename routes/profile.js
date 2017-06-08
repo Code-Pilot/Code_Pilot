@@ -158,5 +158,38 @@ router.get('/teacher/:uname/delete/', function(req,res,next) {
   })
 })
 
+router.post('/online/', (req,res) => {
+  var uname = req.body.uname
+  teacher = req.body
+  // var isOnline = req.body.isOnline
+  linkQuery.goOnline(req.body, uname)
+  .then(data => {
+      res.redirect('/profile/teacher/'+ teacher.uname)
+  })
+})
+
+router.post('/offline/', (req,res) => {
+  var uname = req.body.uname
+  teacher = req.body
+  // var isOnline = req.body.isOnline
+  linkQuery.goOffline(req.body, uname)
+  .then(data => {
+      res.redirect('/profile/teacher/'+ teacher.uname)
+  })
+})
+
+
+
+// router.post('/offline/', (req,res) => {
+//   teacher = req.body
+//   var isOnline = req.body.isOnline
+//   knex('teachers').where('isOnline', isOnline).update({
+//     'isOnline': false
+//   }).then(() => {
+//     console.log('meowth');
+//     res.redirect('/profile/teacher/'+ teacher.uname)
+//   })
+// })
+
 
 module.exports = router;

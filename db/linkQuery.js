@@ -10,8 +10,22 @@ function deleteTeacher(uname) {
   'uname', uname).del()
 }
 
+function goOnline(body, uname){
+  return knex('teachers').where('uname', uname).update({
+    'isOnline': true
+  })
+}
+
+function goOffline(body, uname){
+  return knex('teachers').where('uname', uname).update({
+    'isOnline': false
+  })
+}
+
 
 module.exports = {
   deleteStudent,
-  deleteTeacher
+  deleteTeacher,
+  goOnline,
+  goOffline
 }
