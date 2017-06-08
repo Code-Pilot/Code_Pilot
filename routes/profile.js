@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 var linkQuery = require('../db/linkQuery');
 var knex = require('../db/knex');
-var bcrypt = require('bcrypt')
+var bcrypt = require('bcryptjs')
 var cookieSession = require('cookie-session')
 var key = process.env.COOKIE_KEY || 'asdfasdf'
 //router mounted at localhost:3000/profile
@@ -15,7 +15,11 @@ router.get('/student/:uname', (req, res) =>{
 })
 
 
-
+router.get('/student/pair-programming/', (req,res) => {
+  var onlineTeachers = knex('teachers').select().where('isOnline', true).then((data)=>{
+    res.render('online-teachers', onlineTeachers)
+  })
+})
 
 // app.post('/profile', (req, res) => {
 //   linkQuery.seeIfUserExists().where({
@@ -155,6 +159,26 @@ router.get('/teacher/:uname/edit', function(req, res, next) {
 router.get('/teacher/:uname/delete/', function(req,res,next) {
   linkQuery.deleteTeacher(req.params.uname).then(() => {
     res.redirect('/')
+  })
+})
+
+router.post('/online/', (req,res) => {
+  var uname = req.body.uname
+  teacher = req.body
+  // var isOnline = req.body.isOnline
+  linkQuery.goOnline(req.body, uname)
+  .then(data => {
+      res.redirect('/profile/teacher/'+ teacher.uname)
+  })
+})
+
+router.post('/offline/', (req,res) => {
+  var uname = req.body.uname
+  teacher = req.body
+  // var isOnline = req.body.isOnline
+  linkQuery.goOffline(req.body, uname)
+  .then(data => {
+      res.redirect('/profile/teacher/'+ teacher.uname)
   })
 })
 
