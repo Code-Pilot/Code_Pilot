@@ -68,3 +68,24 @@ a {
   flex-direction: column;
   width: 44em;
 }
+
+.welcome-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.enterChat {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  height: 2em;
+  width: 38em;
+  font-size: large;
+}
+
+.online-users-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}

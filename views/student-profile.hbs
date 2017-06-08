@@ -1,7 +1,25 @@
 
-<h2>Welcome, {{student.uname}}!</h2>
+<h1 class="welcome-header">Welcome, {{student.uname}}!</h1>
 
-<p>{{student.bio}}</p>
+<h4>Bio:</h4>
+  <ul>
+    <h6>{{student.bio}}</h6>
+  </ul>
+<h4>My Stack:</h4>
+  <ul>
+    <h6>{{student.stack}}</h6>
+  </ul>
+<h4>My Languages</h4>
+  <ul>
+    <h6>{{student.lang1}}</h6>
+    <h6>{{student.lang2}}</h6>
+  </ul>
+<h4>I'd like to know:</h4>
+  <ul>
+    <h6>{{student.langToKnow1}}</h6>
+    <h6>{{student.langToKnow2}}</h6>
+  </ul>
+
 
 
 <a href="/profile/student/{{student.uname}}/edit">Edit Profile</a>
@@ -10,8 +28,13 @@
 <hr>
 
 <div class="container">
+
+  <div class="col-md-6">
+    <!-- hard sell -->
+  </div>
+
   <div class="row" id="userFormArea">
-    <div class="col-md-12">
+    <div class="col-md-6">
       <form class="" id="userForm">
         <div class="form-group">
           <input class="form-control" id="username" style="display:none" value="<em>{{student.userType}}</em> - <strong>{{student.uname}}</strong>">
@@ -25,13 +48,13 @@
 
 
   <div id="messageArea" class="row hide">
-    <div class="col-md-4">
+    <div class="col-md-2">
       <div class="well">
-        <h3>Online Users</h3>
+        <h3 class="online-users-header">Online Users</h3>
         <ul class="list-group" id="users"></ul>
       </div>
     </div>
-    <div class="col-md-8">
+    <div class="col-md-4">
       <div class="chat" id="chat"></div>
       <form class="" id="messageForm" action="index.html" method="post">
         <div class="form-group">
