@@ -30,7 +30,10 @@
 <div class="container">
 
   <div class="col-md-6">
-    <!-- hard sell -->
+    <section class="online-teachers">
+      <h2>Available Teachers</h2>
+      <h5>These users are online and ready to answer your questions!</h5>
+    </section>
   </div>
 
   <div class="row" id="userFormArea">
@@ -49,8 +52,10 @@
 
   <div id="messageArea" class="row hide">
     <div class="col-md-2">
-      <div class="well">
-        <h3 class="online-users-header">Online Users</h3>
+      <div class="well users-list">
+        <div class="online-users-header" align="center">
+          <h3>Online Users</h3>
+        </div>
         <ul class="list-group" id="users"></ul>
       </div>
     </div>
@@ -59,7 +64,7 @@
       <form class="" id="messageForm" action="index.html" method="post">
         <div class="form-group">
           <label for="">Enter Message</label>
-          <textarea class="form-control" id="message" name="name" rows="8" cols="80"></textarea>
+          <textarea class="form-control" id="message" name="name" rows="3"></textarea>
           <br />
           <input type="submit" name="" class="btn btn-primary" value="Send Message">
           <a href="/profile/student/{{student.uname}}"><div class="btn btn-warning">Exit Chat</div></a>
