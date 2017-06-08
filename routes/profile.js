@@ -134,7 +134,10 @@ router.post('/teacher/edited/', function(req, res, next){
         'lname': teacher.lname,
         'email': teacher.email,
         'bio': teacher.bio,
-        'skills': teacher.skills
+        'skills': teacher.skills,
+        'lang1': teacher.lang1,
+        'lang2': teacher.lang2,
+        'lang3': teacher.lang3
   })
   .then((data)=>{
     console.log('new teach');
