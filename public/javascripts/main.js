@@ -37,6 +37,10 @@ $(document).ready(function() {
     })
   });
 
+  $('.enterChat').click(function() {
+    $('#messageArea').toggleClass('hide')
+  })
+
   $('.signup-modal-button').click(function() {
     console.log('poop');
     $('.signup-modal-div').toggleClass('hide')
