@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 var linkQuery = require('../db/linkQuery');
 var knex = require('../db/knex');
-var bcrypt = require('bcrypt')
+var bcrypt = require('bcryptjs')
 
 //router mounted at localhost:3000/signup
 router.post('/', function(req,res,next){
