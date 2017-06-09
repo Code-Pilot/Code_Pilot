@@ -1,29 +1,31 @@
 
 <h1 class="welcome-header">Welcome, {{student.uname}}!</h1>
 
-<h4>Bio:</h4>
-  <ul>
-    <h6>{{student.bio}}</h6>
-  </ul>
-<h4>My Stack:</h4>
-  <ul>
-    <h6>{{student.stack}}</h6>
-  </ul>
-<h4>My Languages</h4>
-  <ul>
-    <h6>{{student.lang1}}</h6>
-    <h6>{{student.lang2}}</h6>
-  </ul>
-<h4>I'd like to know:</h4>
-  <ul>
-    <h6>{{student.langToKnow1}}</h6>
-    <h6>{{student.langToKnow2}}</h6>
-  </ul>
-
-
-
-<a href="/profile/student/{{student.uname}}/edit">Edit Profile</a>
-
+<div class="container">
+  <section class="col-md-3"></section>
+  <section class="info-section col-md-6">
+    <h4>Bio:</h4>
+    <ul>
+      <h6>{{student.bio}}</h6>
+    </ul>
+    <h4>My Stack:</h4>
+    <ul>
+      <h6>{{student.stack}}</h6>
+    </ul>
+    <h4>My Languages:</h4>
+    <ul>
+      <h6>{{student.lang1}}</h6>
+      <h6>{{student.lang2}}</h6>
+    </ul>
+    <h4>I'd like to know:</h4>
+    <ul>
+      <h6>{{student.langToKnow1}}</h6>
+      <h6>{{student.langToKnow2}}</h6>
+    </ul>
+      <a href="/profile/student/{{student.uname}}/edit">Edit Profile</a>
+  </section>
+  <section class="col-md-3"></section>
+</div>
 
 <hr>
 
