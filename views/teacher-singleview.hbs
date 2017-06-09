@@ -1,16 +1,25 @@
-<h3>{{teacher.uname}} is an excellent developer!</h3>
+<div class="row">
+  <div class="col-sm-12" align="center">
+      <img style="width:20%;height:20%;" src="/images/code-pilot.png"></img>
+  </div>
+</div>
+<div class="container">
+  <div class="row col-sm-12" align="center">
+    <div class="bcolor" style="border:2px solid black;width:50%;">
+      <h3>{{teacher.uname}} is an excellent developer!</h3>
 
-<h4>A little about {{teacher.uname}}:</h4>
-<p>My full name is actually {{teacher.fname}} {{teacher.lname}}</p>
-<p>{{teacher.bio}}</p>
+      <h4>A little about {{teacher.uname}}:</h4>
 
-<h5>Some of {{teacher.uname}}'s favorite languages are:</h5>
+      <hr>
+      <p>My full name is actually {{teacher.fname}} {{teacher.lname}}</p>
+      <p>{{teacher.bio}}</p>
 
-<p>{{teacher.lang1}}</p>
-<p>{{teacher.lang2}}</p>
-<p>{{teacher.lang3}}</p>
+      <h5>Some of {{teacher.uname}}'s favorite languages are:</h5>
 
-<h3>You can pair program with {{teacher.uname}}:</h3>
+      <p>{{teacher.lang1}}</p>
+      <p>{{teacher.lang2}}</p>
+      <p>{{teacher.lang3}}</p>
+
 
   <div class="row" id="userFormArea">
     <div class="col-md-6">
@@ -46,3 +55,13 @@
       </form>
     </div>
   </div>
+
+      <hr>
+
+      <h3>You can pair program with {{teacher.uname}}:</h3>
+
+      <a href="#"><button type="button" class="btn-primary"> Pair Program</button></a>
+    </div>
+  </div>
+</div>
+
