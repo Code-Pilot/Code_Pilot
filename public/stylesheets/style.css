@@ -133,3 +133,24 @@ a {
   border: 2px solid black;
   padding: 15px;
 }
+
+.privateChat {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.wrapIt {
+  border: 2px solid black;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin:5%;
+  margin-left: 22.5%
+}
+
+.wrapIt * {
+  width: 100%;
+  text-align: center;
+}
