@@ -145,7 +145,7 @@ nsp.on('connection', function(socket) {
   socket.on('send message1', function(data){
     io.sockets.emit('new message1', {msg: data, user: socket.username})
   })
-
+})
 nsp.emit('hi', 'everyone!');
 
 io.sockets.on('connection', function (socket) {
@@ -153,4 +153,3 @@ io.sockets.on('connection', function (socket) {
     socket.join(data.email); // We are using room of socket io
   });
 });
-})
