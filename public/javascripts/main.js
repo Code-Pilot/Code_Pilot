@@ -63,6 +63,16 @@ $(document).ready(function() {
 
 
 
+  $('#check').click(function(){
+    var pass = $('.pass')
+    if(('.check').checked){
+      pass.setAttribute('type','text')
+    }
+    else{
+      pass.setAttribute('type','password')
+    }
+  })
+
   setTimeout(slide_front_text, 2500);
 
   function slide_front_text() {
