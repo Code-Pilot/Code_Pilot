@@ -1,27 +1,26 @@
-<h2>Welcome, {{teacher.uname}}!</h2>
+<h1 class="welcome-header">Welcome, {{teacher.uname}}!</h1>
 
-<p>{{teacher.bio}}</p>
-<p>{{teacher.email}}</p>
-
-<h2>Yeah, I teach.... Bro</h2>
-
-<p>{{teacher.skills}}</p>
-
-<a href="/profile/teacher/{{teacher.uname}}/edit">Edit My Profile</a>
-
-<h3>Would you like to be available for pair-programming?</h3>
-<form class="" action="/profile/online/" method="post">
-  <input hidden type="text" name="isOnline" value="{{teacher.isOnline}}">
-  <input hidden type="text" name="uname" value="{{teacher.uname}}">
-  <button type="submit" class="online btn-primary">Go Online</button>
-</form>
-
-<form class="" action="/profile/offline/" method="post">
-  <input hidden type="text" name="isOnline" value="{{teacher.isOnline}}">
-  <input hidden type="text" name="uname" value="{{teacher.uname}}">
-  <button type="submit" class="offline btn-danger">Go Offline</button>
-</form>
-
+<div class="container">
+  <section class="col-md-3"></section>
+  <section class="info-section col-md-6">
+    <h4>Bio:</h4>
+    <ul>
+      <h6>{{teacher.bio}}</h6>
+    </ul>
+    <h4>My Skills:</h4>
+    <ul>
+      <h6>{{teacher.skills}}</h6>
+    </ul>
+    <h4>My Languages:</h4>
+    <ul>
+      <h6>{{teacher.lang1}}</h6>
+      <h6>{{teacher.lang2}}</h6>
+      <h6>{{teacher.lang3}}</h6>
+    </ul>
+    <a href="/profile/teacher/{{teacher.uname}}/edit">Edit My Profile</a>
+  </section>
+  <section class="col-md-3"></section>
+</div>
 
 
 
@@ -30,8 +29,24 @@
 
 
 <div class="container">
+
+  <section class="col-md-6">
+    <h3>Would you like to be available for pair-programming?</h3>
+    <form class="" action="/profile/online/" method="post">
+      <input hidden type="text" name="isOnline" value="{{teacher.isOnline}}">
+      <input hidden type="text" name="uname" value="{{teacher.uname}}">
+      <button type="submit" class="online btn-primary">Go Online</button>
+    </form>
+
+    <form class="" action="/profile/offline/" method="post">
+      <input hidden type="text" name="isOnline" value="{{teacher.isOnline}}">
+      <input hidden type="text" name="uname" value="{{teacher.uname}}">
+      <button type="submit" class="offline btn-danger">Go Offline</button>
+    </form>
+  </section>
+
   <div class="row" id="userFormArea">
-    <div class="col-md-12">
+    <div class="col-md-6">
       <form class="" id="userForm">
         <div class="form-group">
           <input style="display:none"type="text" name="userType" value="teacher">
@@ -46,18 +61,20 @@
 
 
   <div id="messageArea" class="row hide">
-    <div class="col-md-4">
-      <div class="well">
-        <h3>Online Users</h3>
+    <div class="col-md-2">
+      <div class="well users-list">
+        <div class="online-users-header" align="center">
+          <h3>Online Users</h3>
+        </div>
         <ul class="list-group" id="users"></ul>
       </div>
     </div>
-    <div class="col-md-8">
+    <div class="col-md-4">
       <div class="chat" id="chat"></div>
       <form class="" id="messageForm" action="index.html" method="post">
         <div class="form-group">
           <label for="">Enter Message</label>
-          <textarea class="form-control" id="message" name="name" rows="8" cols="80"></textarea>
+          <textarea class="form-control" id="message" name="name" rows="3"></textarea>
           <br />
           <input type="submit" name="" class="btn btn-primary" value="Send Message">
           <a href="/profile/teacher/{{teacher.uname}}"><div class="btn btn-warning">Exit Chat</div></a>
