@@ -98,10 +98,6 @@ router.post('/teacher', function(req, res, next) {
       bcrypt.compare(
         req.body.pword, user.pword
       ).then(function(data){
-        console.log(user.pword);
-        console.log('HELLOHELLO' , user.uname);
-        console.log(data);
-        console.log('USERUSERUSER' , user.id);
         if(data){
           req.session.id = user.id
           res.redirect('/profile/teacher/' + user.uname)
@@ -113,37 +109,6 @@ router.post('/teacher', function(req, res, next) {
       res.redirect('/invalid/creds')
     }
   })
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  // console.log('mehhhh');
-  // const teacher = req.body;
-  // knex('teachers').select().where('uname', teacher.uname)
-  // .then((data) => {
-  //     res.redirect('/profile/teacher/'+ teacher.uname);
-  //   })
 });
 
 router.post('/student/edited/', function(req, res, next){
