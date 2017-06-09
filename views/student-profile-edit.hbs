@@ -1,7 +1,7 @@
 <h1 class="page-title">Edit Profile</h1>
 
 <div class="edit-form-container">
-  <form class="edit-form" action="/profile/student/edited" method="post">
+  <form class="info-section edit-form" action="/profile/student/edited" method="post">
     <input hidden type="text" name="id" value="{{student.id}}">
 
     <div class="">
@@ -46,7 +46,7 @@
     </div>
     <br>
     <div class="">
-      <label for="">Languages I would like to know:</label>
+      <label for="">Languages I want to learn:</label>
       <input type="text" name="langToKnow1" value="{{student.langToKnow1}}">
       <input type="text" name="langToKnow2" value="{{student.langToKnow2}}">
     </div>
