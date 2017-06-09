@@ -84,9 +84,12 @@ router.get('/student/:uname/edit', function(req, res, next) {
 router.get('/teacher/:uname', (req, res) =>{
   var teacher = req.params.uname
   knex('teachers').select().where('uname', teacher).then((data) => {
-    res.render('teacher-profile', {teacher: data[0]})
+    res.render('teacher-profile', {
+      teacher: data[0]
+      })
   })
 })
+
 
 router.post('/teacher', function(req, res, next) {
   knex('teachers').select().where({

@@ -30,19 +30,23 @@
 
 <div class="container">
 
-  <section class="col-md-6">
+  <section class="col-md-6 pp">
     <h3>Would you like to be available for pair-programming?</h3>
     <form class="" action="/profile/online/" method="post">
       <input hidden type="text" name="isOnline" value="{{teacher.isOnline}}">
       <input hidden type="text" name="uname" value="{{teacher.uname}}">
-      <button type="submit" class="online btn-primary">Go Online</button>
+      <button type="submit" class="boutton online btn-primary">Go Online</button>
     </form>
-
+<br>
     <form class="" action="/profile/offline/" method="post">
       <input hidden type="text" name="isOnline" value="{{teacher.isOnline}}">
       <input hidden type="text" name="uname" value="{{teacher.uname}}">
-      <button type="submit" class="offline btn-danger">Go Offline</button>
+      <button type="submit" class="boutton offline btn-danger">Go Offline</button>
     </form>
+
+    {{#if isOnline}}
+      <h1>Fuck Me Please</h1>
+    {{/if}}
   </section>
 
   <div class="row" id="userFormArea">
@@ -52,7 +56,7 @@
           <input style="display:none"type="text" name="userType" value="teacher">
           <input class="form-control" id="username" style="display:none" value="<em>{{teacher.userType}}</em> - <strong>{{teacher.uname}}</strong> {<span style='background-color:yellow'>{{teacher.lang1}}</span> <span style='background-color:dodgerblue; color:white;'> {{teacher.lang2}}</span>}">
           <br />
-          <input type="submit" class="enterChat btn btn-primary" value="Enter Chat">
+          <input type="submit" class="enterChat btn btn-primary" value="Enter Group Chat">
         </div>
       </form>
 
