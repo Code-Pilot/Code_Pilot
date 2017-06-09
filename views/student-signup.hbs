@@ -1,17 +1,58 @@
-<h2>Welcome to Code_Pilot</h2>
-<p>We hope you learn a lot!</p>
+<body class="bcolor">
+  <div class="container">
+    <div class="">
+      <div class="row">
+        <div class="col-sm-12" align="center">
+            <img style="width:40%;height:40%;" src="/images/code-pilot.png"></img>
+        </div>
+      </div>
 
 
-<a href="/">Home</a>
+      <div class="row col-sm-12" align="center">
+        <h2>Welcome to Code_Pilot</h2>
+        <p>We hope you learn a lot!</p>
+      </div>
 
-<form class="" action="/signup" method="post">
-  <input hidden type="text" name="id" value="{{student.id}}">
-  <input type="text" name="uname" value="" placeholder="User Name" required>
-  <input type="text" name="fname" value="" placeholder="First Name" required>
-  <input type="text" name="lname" value="" placeholder="Last Name" required>
-  <input class="pass" type="password" name="pword" value="" placeholder="Password" required>
-  <input type="email" name="email" value="" placeholder="Email Address" required>
-  <button type="submit" name="button">Submit</button>
-</form>
 
-<a href="#"><p>Forgot password
+      <div class="row col-sm-12" align="center">
+        <a href="/">Home</a>
+      </div>
+
+
+      <form class="" action="/signup" method="post">
+        <input hidden type="text" name="id" value="{{student.id}}">
+
+        <div class="row col-sm-12" align="center">
+          <label for="">Username:</label>
+          <input type="text" name="uname" value="" placeholder="">
+        </div>
+        <div class="row col-sm-12" align="center">
+          <label for="">Password:</label>
+          <input type="password" name="pword" value="" placeholder="">
+        </div>
+        <div class="row col-sm-12" align="center">
+          <label for="">First Name:</label>
+          <input type="text" name="fname" value="" placeholder="">
+        </div>
+        <div class="row col-sm-12" align="center">
+          <label for="">Last Name:</label>
+          <input type="text" name="lname" value="" placeholder="">
+        </div>
+        <div class="row col-sm-12" align="center">
+          <label for="">Email:</label>
+          <input type="text" name="email" value="" placeholder="">
+        </div>
+        <div class="row col-sm-12" align="center">
+          <button type="submit" name="button">Submit</button>
+        </div>
+
+      </form>
+    </div>
+  </div>
+</body>
+
+
+
+
+
+<!-- <a href="#"><p>Forgot password -->
