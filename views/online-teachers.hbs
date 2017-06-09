@@ -1,9 +1,8 @@
-{{#each teacher}}
-  <li>{{teacher.uname}}</li>
-  <div class="info-modal hide">
-    {{teacher.bio}}
-    {{teacher.lang1}}
-    {{teacher.lang2}}
-    {{teacher.lang4}}
-  </div>
+{{#each onlineTeachers}}
+      <h4>
+       {{uname}}
+      </h4>
+      <label for="">Bio:</label>
+      <p>{{bio}}</p>
+      <a href="/profile/teacher/view/{{id}}"><button class="btn-warning onlineTeacher">Learn More</button></a>
 {{/each}}
