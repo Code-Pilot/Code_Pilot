@@ -46,7 +46,16 @@ router.get('/student-login', function(req, res, next) {
 });
 
 router.get('/try/again/please/', (req,res) => {
-  res.render('oops')
+  res.render('oops' , {message: 'That account already exist.'}) // hbs here
+})
+router.get('/try/teach/please/', (req,res) => {
+  res.render('oops' , {message: 'That account already exist.'})
+})
+router.get('/no/can/do/', (req,res) => {
+  res.render('oops' , {message: 'Incorrect Password'})
+})
+router.get('/invalid/creds/', (req,res) => {
+  res.render('oops' , {message: 'Invalid Username or Password'})
 })
 
 
