@@ -4,8 +4,9 @@
   </div>
 </div>
 <div class="container">
+  <h3 style="text-align:center;"><a  href="http://deadsimplescreensharing.com/">Get the <em>Chrome Plugin</em> to ScreenShare</a></h3>
   <div class="row col-sm-12" align="center">
-    <div class="bcolor" style="border:2px solid black;width:50%;">
+    <div class="bcolor" style="border:2px solid black;width:50%; margin-top:5%;">
       <h3>{{teacher.uname}} is an excellent developer!</h3>
 
       <h4>A little about {{teacher.uname}}:</h4>
@@ -20,48 +21,47 @@
       <p>{{teacher.lang2}}</p>
       <p>{{teacher.lang3}}</p>
 
-
-  <div class="row" id="userFormArea">
-    <div class="col-md-6">
-      <form class="" id="userForm">
-        <div class="form-group">
-          <input style="display:none"type="text" name="userType" value="student">
-          <input class="form-control" id="username" style="display:none" value="<em>{{student.userType}}</em> - <strong>{{student.uname}}</strong>">
-          <br/>
-          <input type="submit" class="enterChat btn btn-primary" value="Pair Program with {{teacher.uname}}">
-        </div>
-      </form>
-
-    </div>
-  </div>
-
-
-  <div id="messageArea" class="row hide">
-    <div class="col-md-4">
-      <h3>Paired with {{teacher.uname}}</h3>
-      <p>Please follorw <a href="#">this link</a> to get the screen sharing chrome-plugin</p>
-      <p>Follow their simple instructions</p>
-      <p>Slack me the link</p>
-      <h6>Let's Pair Program</h6>
-      <div class="chat" id="chat"></div>
-      <form class="" id="messageForm" action="index.html" method="post">
-        <div class="form-group">
-          <label for="">Enter Message</label>
-          <textarea class="form-control" id="message" name="name" rows="3"></textarea>
-          <br />
-          <input type="submit" name="" class="btn btn-primary" value="Send Message">
-          <a href="/profile/teacher/view/{{teacher.id}}/"><div class="btn btn-warning">Exit Chat</div></a>
-        </div>
-      </form>
-    </div>
-  </div>
-
-      <hr>
-
-      <h3>You can pair program with {{teacher.uname}}:</h3>
-
-      <a href="#"><button type="button" class="btn-primary"> Pair Program</button></a>
     </div>
   </div>
 </div>
 
+
+<div class="privateChat">
+
+<div class="row" id="userFormArea">
+  <div class="col-md-6">
+    <form class="" id="userForm">
+      <div class="form-group">
+        <input style="display:none"type="text" name="userType" value="student">
+        <input class="form-control" id="username" style="display:none" value="<em>{{student.userType}}</em> - <strong>{{student.uname}}</strong>">
+        <br/>
+        <input type="submit" class="enterChat btn btn-primary" value="Pair Program with {{teacher.uname}}">
+      </div>
+    </form>
+
+  </div>
+</div>
+
+
+<div id="messageArea" class="row hide">
+  <div class="col-md-8">
+    <div class="wrapIt">
+      <strong><h3>Paired with {{teacher.uname}}</h3></strong>
+      <p>1).Please follorw <a href="http://deadsimplescreensharing.com/">this link</a> to get the screen sharing chrome-plugin</p>
+      <p>2). Follow their simple instructions</p>
+      <p>3). Slack me the link</p>
+      <p>4). Then Let's Pair Program!</p>
+    </div>
+    <div class="chat" id="chat"></div>
+    <form class="" id="messageForm" action="index.html" method="post">
+      <div class="form-group">
+        <label for="">Enter Message</label>
+        <textarea class="form-control" id="message" name="name" rows="3"></textarea>
+        <br />
+        <input type="submit" name="" class="btn btn-primary" value="Send Message">
+        <a href="/profile/teacher/view/{{teacher.id}}/"><div class="btn btn-warning">Exit Chat</div></a>
+      </div>
+    </form>
+  </div>
+</div>
+</div>
