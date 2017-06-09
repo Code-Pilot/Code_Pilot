@@ -110,7 +110,7 @@ io.sockets.on('connection', function(socket) {
     io.sockets.emit('new message', {msg: data, user: socket.username})
   })
 
-  // new user & handlebars uname
+  // new user
   socket.on('new user', function(data, callback) {
     callback(true);
     socket.username = data;
@@ -121,6 +121,32 @@ io.sockets.on('connection', function(socket) {
     io.sockets.emit('get users', users);
   }
 })
+
+io.sockets.on('connection', function (socket) {
+  socket.on('join', function (data) {
+    socket.join(data.email); // We are using room of socket io
+  });
+});
+
+
+
+var nsp = io.of('/Pair-Program');
+nsp.on('connection', function(socket) {
+  socket.join('Pair Programing Room')
+  console.log('monkeys');
+
+  // Disconnect
+  socket.on('disconnect', function(data){
+
+    console.log('Another 1 bites the dust', connections.length);
+  });
+
+  // Send Message
+  socket.on('send message1', function(data){
+    io.sockets.emit('new message1', {msg: data, user: socket.username})
+  })
+})
+nsp.emit('hi', 'everyone!');
 
 io.sockets.on('connection', function (socket) {
   socket.on('join', function (data) {

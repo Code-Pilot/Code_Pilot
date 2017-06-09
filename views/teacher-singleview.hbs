@@ -20,6 +20,42 @@
       <p>{{teacher.lang2}}</p>
       <p>{{teacher.lang3}}</p>
 
+
+  <div class="row" id="userFormArea">
+    <div class="col-md-6">
+      <form class="" id="userForm">
+        <div class="form-group">
+          <input style="display:none"type="text" name="userType" value="student">
+          <input class="form-control" id="username" style="display:none" value="<em>{{student.userType}}</em> - <strong>{{student.uname}}</strong>">
+          <br/>
+          <input type="submit" class="enterChat btn btn-primary" value="Pair Program with {{teacher.uname}}">
+        </div>
+      </form>
+
+    </div>
+  </div>
+
+
+  <div id="messageArea" class="row hide">
+    <div class="col-md-4">
+      <h3>Paired with {{teacher.uname}}</h3>
+      <p>Please follorw <a href="#">this link</a> to get the screen sharing chrome-plugin</p>
+      <p>Follow their simple instructions</p>
+      <p>Slack me the link</p>
+      <h6>Let's Pair Program</h6>
+      <div class="chat" id="chat"></div>
+      <form class="" id="messageForm" action="index.html" method="post">
+        <div class="form-group">
+          <label for="">Enter Message</label>
+          <textarea class="form-control" id="message" name="name" rows="3"></textarea>
+          <br />
+          <input type="submit" name="" class="btn btn-primary" value="Send Message">
+          <a href="/profile/teacher/view/{{teacher.id}}/"><div class="btn btn-warning">Exit Chat</div></a>
+        </div>
+      </form>
+    </div>
+  </div>
+
       <hr>
 
       <h3>You can pair program with {{teacher.uname}}:</h3>
@@ -28,3 +64,4 @@
     </div>
   </div>
 </div>
+
