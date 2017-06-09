@@ -15,11 +15,7 @@ router.get('/student/:uname', (req, res) =>{
 })
 
 
-router.get('/student/pair-programming/', (req,res) => {
-  var onlineTeachers = knex('teachers').select().where('isOnline', true).then((data)=>{
-    res.render('online-teachers', onlineTeachers)
-  })
-})
+
 
 // app.post('/profile', (req, res) => {
 //   linkQuery.seeIfUserExists().where({
@@ -181,6 +177,33 @@ router.post('/offline/', (req,res) => {
       res.redirect('/profile/teacher/'+ teacher.uname)
   })
 })
+
+// router.get('/buttholes/', (req,res) => {
+//   var online = req.params.isOnline
+//   knex('teachers').select().where('isOnline', online).then((data) => {
+//   console.log('icky');
+//     res.render('online-teachers', {onlineTeachers : data[0]})
+//   })
+//   })
+
+
+  router.get('/teacher/view/:id', (req,res) => {
+    const teacher = req.params.id
+    knex('teachers').select().where('id',teacher).then((data)=>{
+      res.render('teacher-singleview', {teacher:data[0]})
+    })
+  })
+
+  router.get('/pair-programmer/', function(req, res, next) {
+  knex('teachers')
+    .select().where('isOnline', true)
+    .then(onlineTeachers => {
+      res.render('online-teachers', { onlineTeachers });
+    })
+})
+
+// router.get('/pair-programmer/:id')
+// const id = req.params.id
 
 
 module.exports = router;

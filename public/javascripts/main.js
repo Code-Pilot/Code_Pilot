@@ -55,9 +55,13 @@ $(document).ready(function() {
     $('.login-modal-button').replaceWith('<a href="/"><button>Back</button></a>')
   })
 
-  $('#teacher-signup').click(function() {
 
-  })
+    $('.onlineTeacher').click(function() {
+      $('.teacher-modal').toggleClass('hide')
+    })
+
+
+
 
   setTimeout(slide_front_text, 2500);
 
